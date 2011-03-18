@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Documentation by YARD 0.6.4</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>Bandwidth</h1>
+
+<p>Ruby gem for consuming the <a href="https://my.bandwidth.com/portal/apidoc/welcome.htm">Bandwidth REST API</a>.</p>
+
+<h2>Installation</h2>
+
+<pre class="code"><span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='bandwidth identifier id'>bandwidth</span>
+</pre>
+
+<h2>Example</h2>
+
+<p><a href="http://jsgoecke.github.com/bandwdith">API Docs</a></p>
+
+<pre class="code"><span class='require identifier id'>require</span> <span class='string val'>'rubygems'</span>
+<span class='require identifier id'>require</span> <span class='string val'>'bandwidth'</span>
+<span class='bandwidth identifier id'>bandwidth</span> <span class='assign token'>=</span> <span class='Bandwidth constant id'>Bandwidth</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:developer_key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'your developer key'</span><span class='rparen token'>)</span>
+<span class='bandwidth identifier id'>bandwidth</span><span class='dot token'>.</span><span class='area_code_number_search identifier id'>area_code_number_search</span> <span class='symbol val'>:area_code</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'720'</span><span class='comma token'>,</span> <span class='symbol val'>:max_quantity</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>1</span>
+</pre>
+
+<p>Returns (using awesome_print gem):</p>
+
+<pre class="code"><span class='lbrace token'>{</span>
+       <span class='string val'>&quot;body&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span>
+        <span class='string val'>&quot;numberSearchResponse&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span>
+                   <span class='string val'>&quot;xmlns:xsd&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class='comma token'>,</span>
+                    <span class='string val'>&quot;quantity&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;1&quot;</span><span class='comma token'>,</span>
+                   <span class='string val'>&quot;requestID&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;463f5cd2-e75d-4cc2-9ab1-1235a3dd283c&quot;</span><span class='comma token'>,</span>
+                <span class='string val'>&quot;dateTimeSent&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;2011-03-18 19:48:04Z&quot;</span><span class='comma token'>,</span>
+                    <span class='string val'>&quot;warnings&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span>
+                      <span class='string val'>&quot;errors&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span>
+                   <span class='string val'>&quot;xmlns:xsi&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class='comma token'>,</span>
+            <span class='string val'>&quot;telephoneNumbers&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span>
+                <span class='string val'>&quot;telephoneNumber&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span>
+                               <span class='string val'>&quot;e164&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;+17205551212&quot;</span><span class='comma token'>,</span>
+                             <span class='string val'>&quot;npaNxx&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;720555&quot;</span><span class='comma token'>,</span>
+                           <span class='string val'>&quot;tenDigit&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;7205551212&quot;</span><span class='comma token'>,</span>
+                    <span class='string val'>&quot;formattedNumber&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;1-720-555-1212&quot;</span><span class='comma token'>,</span>
+                           <span class='string val'>&quot;numberID&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;6f37a640-0d9d-45cc-b97b-d6ad77f220b2&quot;</span><span class='comma token'>,</span>
+                             <span class='string val'>&quot;status&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Available&quot;</span><span class='comma token'>,</span>
+                         <span class='string val'>&quot;rateCenter&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span>
+                         <span class='string val'>&quot;name&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;DENVERSLVN&quot;</span><span class='comma token'>,</span>
+                         <span class='string val'>&quot;lata&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;656&quot;</span><span class='comma token'>,</span>
+                        <span class='string val'>&quot;state&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;CO&quot;</span>
+                    <span class='rbrace token'>}</span>
+                <span class='rbrace token'>}</span>
+            <span class='rbrace token'>}</span><span class='comma token'>,</span>
+                     <span class='string val'>&quot;message&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Successfully executed specified number search.&quot;</span><span class='comma token'>,</span>
+                      <span class='string val'>&quot;status&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;success&quot;</span><span class='comma token'>,</span>
+                       <span class='string val'>&quot;xmlns&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;http://www.bandwidth.com/api/&quot;</span>
+        <span class='rbrace token'>}</span>
+    <span class='rbrace token'>}</span><span class='comma token'>,</span>
+       <span class='string val'>&quot;code&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>200</span><span class='comma token'>,</span>
+    <span class='string val'>&quot;headers&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span>
+              <span class='string val'>&quot;X-Powered-By&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Bandwidth.com&quot;</span><span class='comma token'>,</span>
+        <span class='string val'>&quot;X-API-SupportEmail&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;apifeedback@bandwidth.com&quot;</span><span class='comma token'>,</span>
+              <span class='string val'>&quot;Content-Type&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;text/xml; charset=utf-8&quot;</span><span class='comma token'>,</span>
+                      <span class='string val'>&quot;Date&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Fri, 18 Mar 2011 19:48:04 GMT&quot;</span><span class='comma token'>,</span>
+            <span class='string val'>&quot;Content-Length&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;825&quot;</span><span class='comma token'>,</span>
+                    <span class='string val'>&quot;Server&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Microsoft-IIS/7.0&quot;</span><span class='comma token'>,</span>
+             <span class='string val'>&quot;Cache-Control&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;private&quot;</span><span class='comma token'>,</span>
+          <span class='string val'>&quot;X-AspNet-Version&quot;</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;2.0.50727&quot;</span>
+    <span class='rbrace token'>}</span>
+<span class='rbrace token'>}</span>
+</pre>
+
+<h2>Available Methods</h2>
+
+<p>Full details of available methods <a href="https://my.bandwidth.com/portal/apidoc/2-x-supported-operations.htm">here</a>.</p>
+
+<pre class="code"><span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='getTelephoneNumber identifier id'>getTelephoneNumber</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='getNumberOrder identifier id'>getNumberOrder</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='getNumberOrders identifier id'>getNumberOrders</span> <span class='lparen token'>(</span><span class='developer identifier id'>developer</span><span class='comma token'>,</span> <span class='account identifier id'>account</span><span class='rparen token'>)</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='areaCodeNumberSearch identifier id'>areaCodeNumberSearch</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='npaNxxNumberSearch identifier id'>npaNxxNumberSearch</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='rateCenterNumberSearch identifier id'>rateCenterNumberSearch</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='rateCenterNumberOrder identifier id'>rateCenterNumberOrder</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='tollfreeNumberSearch identifier id'>tollfreeNumberSearch</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='tollfreeNumberOrder identifier id'>tollfreeNumberOrder</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='basicNumberOrder identifier id'>basicNumberOrder</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='changeNumber identifier id'>changeNumber</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='sipTrunkOrder identifier id'>sipTrunkOrder</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Supported constant id'>Supported</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Cdr constant id'>Cdr</span> <span class='minus op'>-</span> <span class='getCdrArchive identifier id'>getCdrArchive</span>
+<span class='lparen token'>(</span><span class='restricted identifier id'>restricted</span> <span class='use identifier id'>use</span><span class='rparen token'>)</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Restricted constant id'>Restricted</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='consumedNumbers identifier id'>consumedNumbers</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Restricted constant id'>Restricted</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='reserveNumbers identifier id'>reserveNumbers</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Restricted constant id'>Restricted</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='pbod identifier id'>pbod</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Restricted constant id'>Restricted</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='rateCenterBlockOrder identifier id'>rateCenterBlockOrder</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Restricted constant id'>Restricted</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='getRateCenterBlockOrder identifier id'>getRateCenterBlockOrder</span>
+<span class='lbrack token'>[</span><span class='float val'>2</span><span class='dot token'>.</span><span class='x identifier id'>x</span><span class='rbrack token'>]</span> <span class='Restricted constant id'>Restricted</span> <span class='Operations constant id'>Operations</span><span class='comma token'>,</span> <span class='Numbers constant id'>Numbers</span> <span class='minus op'>-</span> <span class='getRateCenterBlockOrders identifier id'>getRateCenterBlockOrders</span>
+</pre>
+
+<h2>Copyright</h2>
+
+<p>Copyright (c) 2011 Jason Goecke. See LICENSE.txt for
+further details.</p></div></div>
+    
+    <div id="footer">
+  Generated on Fri Mar 18 12:54:33 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.4 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

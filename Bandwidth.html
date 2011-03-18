@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Class: Bandwidth</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (B)</a> &raquo; 
+    
+    
+    <span class="title">Bandwidth</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Bandwidth
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Bandwidth</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/bandwidth/bandwidth.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="API_METHODS-constant" class="">API_METHODS =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Available REST API methods</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrack token'>[</span> <span class='symbol val'>:get_telephone_number</span><span class='comma token'>,</span>
+<span class='symbol val'>:get_number_order</span><span class='comma token'>,</span>
+<span class='symbol val'>:get_number_orders</span><span class='comma token'>,</span>
+<span class='symbol val'>:area_code_number_search</span><span class='comma token'>,</span>
+<span class='symbol val'>:npa_nxx_number_search</span><span class='comma token'>,</span>
+<span class='symbol val'>:rate_center_number_search</span><span class='comma token'>,</span>
+<span class='symbol val'>:rate_center_number_order</span><span class='comma token'>,</span>
+<span class='symbol val'>:tollfree_number_search</span><span class='comma token'>,</span>
+<span class='symbol val'>:basic_number_order</span><span class='comma token'>,</span>
+<span class='symbol val'>:change_number</span><span class='comma token'>,</span>
+<span class='symbol val'>:sip_trunk_order</span><span class='comma token'>,</span>
+<span class='symbol val'>:consumed_numbers</span><span class='comma token'>,</span>
+<span class='symbol val'>:reserve_numbers</span><span class='comma token'>,</span>
+<span class='symbol val'>:pbod</span><span class='comma token'>,</span>
+<span class='symbol val'>:rate_center_block_order</span><span class='comma token'>,</span>
+<span class='symbol val'>:get_rate_center_block_order</span><span class='comma token'>,</span>
+<span class='symbol val'>:get_rate_center_block_orders</span><span class='comma token'>,</span>
+<span class='symbol val'>:get_cdr_archive</span> <span class='rbrack token'>]</span>
+</pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong>(params) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Instantiate a Bandwdith object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#method_missing-instance_method" title="#method_missing (instance method)">- (Hashie::Mash Object) <strong>method_missing</strong>(method_name, params = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Provides the dispatcher to the available REST methods on the Bandwidth API.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize</strong>(params) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Instantiate a Bandwdith object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+<p>Instantiate a Bandwdith object</p>
+</div></h4>
+      <pre class="example code"><span class='require identifier id'>require</span> <span class='string val'>'rubygems'</span>
+<span class='require identifier id'>require</span> <span class='string val'>'bandwidth'</span>
+<span class='bandwdith identifier id'>bandwdith</span> <span class='assign token'>=</span> <span class='Bandwidth constant id'>Bandwidth</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:developer_key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'test'</span><span class='rparen token'>)</span>
+</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>required</tt>, <tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>params</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <h3>Options Hash (<tt>params</tt>):</h3>
+    <ul class="option">
+      
+        <li>
+          <span class="type">(<tt>required</tt>, <tt>String</tt>)</span>
+          <span class="name">:developer_key</span>
+          <span class="default">
+            
+          </span>
+          &mdash; <div class='inline'>
+<p>assigned to you by Bandwidth</p>
+</div>
+        </tr>
+      
+        <li>
+          <span class="type">(<tt>optional</tt>, <tt>Boolean</tt>)</span>
+          <span class="name">:processing_type</span>
+          <span class="default">
+            
+          </span>
+          &mdash; <div class='inline'>
+<p>whether to ‘process’ the request or only ‘validate’, default is
+‘process’</p>
+</div>
+        </tr>
+      
+        <li>
+          <span class="type">(<tt>optional</tt>, <tt>Symbol</tt>)</span>
+          <span class="name">:log_level</span>
+          <span class="default">
+            
+          </span>
+          &mdash; <div class='inline'>
+<p>which level to set the logging at, off by default</p>
+</div>
+        </tr>
+      
+        <li>
+          <span class="type">(<tt>optional</tt>, <tt>Boolean</tt>)</span>
+          <span class="name">:use_lab_uris</span>
+          <span class="default">
+            
+          </span>
+          &mdash; <div class='inline'>
+<p>if true, will use the Bandwidth Lab URIs rather than production</p>
+</div>
+        </tr>
+      
+    </ul>
+  
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>ArgumentError when the :developer_key is not present</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/bandwidth/bandwidth.rb', line 36</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='params identifier id'>params</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='string val'>&quot;:developer_key required&quot;</span> <span class='if if_mod kw'>if</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:developer_key</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>      
+  
+  <span class='if if kw'>if</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:log_level</span><span class='rbrack token'>]</span>
+    <span class='HTTPI constant id'>HTTPI</span><span class='dot token'>.</span><span class='log_level identifier id'>log_level</span> <span class='assign token'>=</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:log_level</span><span class='rbrack token'>]</span>
+  <span class='else else kw'>else</span>
+    <span class='HTTPI constant id'>HTTPI</span><span class='dot token'>.</span><span class='log identifier id'>log</span> <span class='assign token'>=</span> <span class='false false kw'>false</span>
+  <span class='end end kw'>end</span>
+  
+  <span class='@use_labs_uris ivar id'>@use_labs_uris</span>   <span class='assign token'>=</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:use_lab_uris</span><span class='rbrack token'>]</span> <span class='orop op'>||</span> <span class='false false kw'>false</span>
+  <span class='@developer_key ivar id'>@developer_key</span>   <span class='assign token'>=</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:developer_key</span><span class='rbrack token'>]</span>
+  <span class='@numbers_request ivar id'>@numbers_request</span> <span class='assign token'>=</span> <span class='create_request identifier id'>create_request</span><span class='lparen token'>(</span><span class='symbol val'>:numbers</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='rparen token'>)</span>
+  <span class='@cdrs_request ivar id'>@cdrs_request</span>    <span class='assign token'>=</span> <span class='create_request identifier id'>create_request</span><span class='lparen token'>(</span><span class='symbol val'>:cdrs</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+<div id="method_missing_details" class="method_details_list">
+  <h2>Dynamic Method Handling</h2>
+  <p class="notice this">
+    This class handles dynamic methods through the <tt>method_missing</tt> method
+    
+  </p>
+  
+    <div class="method_details first">
+  <p class="signature first" id="method_missing-instance_method">
+  
+    - (<tt>Hashie::Mash Object</tt>) <strong>method_missing</strong>(method_name, params = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Provides the dispatcher to the available REST methods on the Bandwidth API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+<p>Retrieve numbers available in an area code</p>
+</div></h4>
+      <pre class="example code"><span class='bandwidth identifier id'>bandwidth</span><span class='dot token'>.</span><span class='area_code_number_search identifier id'>area_code_number_search</span> <span class='symbol val'>:area_code</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'720'</span><span class='comma token'>,</span> <span class='symbol val'>:max_quantity</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>10</span>
+</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>required</tt>, <tt>Symbol</tt>)</span>
+      
+      
+        <span class='name'>the</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>method name to invoke on the REST API</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>optional</tt>, <tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>the</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>parameters to pass to the method, should be symbols and may be all
+lowercase with underscores or camelCase</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Hashie::Mash Object</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>containing the results of the REST call</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>NoMethodError if the method requested is not defined in the API_METHODS
+constant</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/bandwidth/bandwidth.rb', line 60</span>
+
+<span class='def def kw'>def</span> <span class='method_missing identifier id'>method_missing</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='NoMethodError constant id'>NoMethodError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;The method #{method_name.to_s} does not exist.&quot;</span> <span class='if if_mod kw'>if</span> <span class='API_METHODS constant id'>API_METHODS</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='rparen token'>)</span> <span class='eq op'>==</span> <span class='false false kw'>false</span>
+  
+  <span class='if if kw'>if</span> <span class='method_name identifier id'>method_name</span> <span class='eq op'>==</span> <span class='symbol val'>:get_cdr_archive</span>
+    <span class='@cdrs_request ivar id'>@cdrs_request</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span> <span class='Gyoku constant id'>Gyoku</span><span class='dot token'>.</span><span class='xml identifier id'>xml</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='method_name identifier id'>method_name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:developer_key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='@developer_key ivar id'>@developer_key</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span><span class='comma token'>,</span>
+                                        <span class='symbol val'>:attributes!</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='xml_namespaces identifier id'>xml_namespaces</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+                                                                 
+    <span class='response identifier id'>response</span> <span class='assign token'>=</span> <span class='HTTPI constant id'>HTTPI</span><span class='dot token'>.</span><span class='post identifier id'>post</span> <span class='@cdrs_request ivar id'>@cdrs_request</span>
+  <span class='else else kw'>else</span>
+    <span class='@numbers_request ivar id'>@numbers_request</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span> <span class='Gyoku constant id'>Gyoku</span><span class='dot token'>.</span><span class='xml identifier id'>xml</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='method_name identifier id'>method_name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:developer_key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='@developer_key ivar id'>@developer_key</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span><span class='comma token'>,</span>
+                                        <span class='symbol val'>:attributes!</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='xml_namespaces identifier id'>xml_namespaces</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+                                                                 
+    <span class='response identifier id'>response</span> <span class='assign token'>=</span> <span class='HTTPI constant id'>HTTPI</span><span class='dot token'>.</span><span class='post identifier id'>post</span> <span class='@numbers_request ivar id'>@numbers_request</span>
+  <span class='end end kw'>end</span>
+  
+  <span class='Hashie constant id'>Hashie</span><span class='colon2 op'>::</span><span class='Mash constant id'>Mash</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:code</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='code identifier id'>code</span><span class='comma token'>,</span>
+                     <span class='symbol val'>:body</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='Crack constant id'>Crack</span><span class='colon2 op'>::</span><span class='XML constant id'>XML</span><span class='dot token'>.</span><span class='parse identifier id'>parse</span><span class='lparen token'>(</span><span class='response identifier id'>response</span><span class='dot token'>.</span><span class='raw_body identifier id'>raw_body</span><span class='rparen token'>)</span><span class='comma token'>,</span>
+                     <span class='symbol val'>:headers</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='headers identifier id'>headers</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Mar 18 12:54:33 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.4 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
