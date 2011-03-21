@@ -1,6 +1,8 @@
 source "http://rubygems.org"
-gem "savon"
+gem "nokogiri"
+gem "crack"
 gem "hashie"
+gem "httpi"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

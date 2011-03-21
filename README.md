@@ -89,6 +89,11 @@ Full details of available methods [here](https://my.bandwidth.com/portal/apidoc/
 	[2.x] Restricted Operations, Numbers - getRateCenterBlockOrder
 	[2.x] Restricted Operations, Numbers - getRateCenterBlockOrders
 
+Notes
+-----
+
+When calling the 'basic_number_order' method, be sure to use ':number_IDs' & ':ext_ref_ID' as the correct options, given that the Bandwidth API is not following camelCase standards in this case.
+
 Copyright
 ---------
 

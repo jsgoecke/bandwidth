@@ -61,22 +61,49 @@ class Bandwidth
     raise NoMethodError, "The method #{method_name.to_s} does not exist." if API_METHODS.include?(method_name) == false
     
     if method_name == :get_cdr_archive
-      @cdrs_request.body = Gyoku.xml({ method_name => params.merge({ :developer_key => @developer_key }),
-                                          :attributes! => xml_namespaces(method_name) })
+      @cdrs_request.body = build_xml(method_name, params)
                                                                    
       response = HTTPI.post @cdrs_request
       Hashie::Mash.new({ :code    => response.code,
                          :body    => response.raw_body,
                          :headers => response.headers })
     else
-      @numbers_request.body = Gyoku.xml({ method_name => params.merge({ :developer_key => @developer_key }),
-                                          :attributes! => xml_namespaces(method_name) })
-                                                                   
+      @numbers_request.body = build_xml(method_name, params)                                  
       response = HTTPI.post @numbers_request
       Hashie::Mash.new({ :code    => response.code,
                          :body    => Crack::XML.parse(response.raw_body),
                          :headers => response.headers })
     end
+  end
+  
+  ##
+  # Builds the XML document for the method call
+  #
+  # @param [required, Symbol] the method name to invoke on the REST API
+  # @param [optional, Hash] the parameters to pass to the method, should be symbols and may be all lowercase with underscores or camelCase
+  # @return [String] the resulting XML document
+  def build_xml(method_name, params)
+    builder_params = params.merge({ :developer_key => @developer_key })
+    
+    builder = Nokogiri::XML::Builder.new do |xml|
+      xml.send(method_name.to_s.camelize.uncapitalize.to_sym, xml_namespaces) do
+        builder_params.each do |parent_k, parent_v|
+          if parent_v.instance_of?(Array)
+            xml.send(parent_k.to_s.camelize.uncapitalize.to_sym) do
+              parent_v.each do |item|
+                item.each do |item_k, item_v|
+                  symbol = (item_k.to_s + '_').to_sym
+                  xml.send(symbol, item_v)
+                end
+              end
+            end
+          else
+            xml.send(parent_k.to_s.camelize.uncapitalize.to_sym, parent_v)
+          end
+        end
+      end
+    end
+    builder.to_xml
   end
   
   private
@@ -121,9 +148,9 @@ class Bandwidth
   #
   # @param [required, Symbol] method_name to add the XML namespace details to
   # @return [Hash] the resulting XML namespace attributes
-  def xml_namespaces(method_name)
-    { method_name => { 'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
-                                       'xmlns:xsd' => 'http://www.w3.org/2001/XMLSchema',
-                                       'xmlns'     => 'http://www.bandwidth.com/api/' } }
+  def xml_namespaces
+    { 'xmlns:xsi' => 'http://www.w3.org/2001/XMLSchema-instance',
+      'xmlns:xsd' => 'http://www.w3.org/2001/XMLSchema',
+      'xmlns'     => 'http://www.bandwidth.com/api/' }
   end
 end
