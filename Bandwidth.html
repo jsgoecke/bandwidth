@@ -133,6 +133,29 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#build_xml-instance_method" title="#build_xml (instance method)">- (String) <strong>build_xml</strong>(method_name, params) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Builds the XML document for the method call.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong>(params) </a>
     
 
@@ -236,7 +259,7 @@
     <ul class="option">
       
         <li>
-          <span class="type">(<tt>required</tt>, <tt>String</tt>)</span>
+          <span class="type">(<tt>required</tt>, <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
           <span class="name">:developer_key</span>
           <span class="default">
             
@@ -478,8 +501,7 @@ constant</p>
 74
 75
 76
-77
-78</pre>
+77</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/bandwidth/bandwidth.rb', line 60</span>
@@ -488,20 +510,19 @@ constant</p>
   <span class='raise identifier id'>raise</span> <span class='NoMethodError constant id'>NoMethodError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;The method #{method_name.to_s} does not exist.&quot;</span> <span class='if if_mod kw'>if</span> <span class='API_METHODS constant id'>API_METHODS</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='rparen token'>)</span> <span class='eq op'>==</span> <span class='false false kw'>false</span>
   
   <span class='if if kw'>if</span> <span class='method_name identifier id'>method_name</span> <span class='eq op'>==</span> <span class='symbol val'>:get_cdr_archive</span>
-    <span class='@cdrs_request ivar id'>@cdrs_request</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span> <span class='Gyoku constant id'>Gyoku</span><span class='dot token'>.</span><span class='xml identifier id'>xml</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='method_name identifier id'>method_name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:developer_key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='@developer_key ivar id'>@developer_key</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span><span class='comma token'>,</span>
-                                        <span class='symbol val'>:attributes!</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='xml_namespaces identifier id'>xml_namespaces</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+    <span class='@cdrs_request ivar id'>@cdrs_request</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span> <span class='build_xml identifier id'>build_xml</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='rparen token'>)</span>
                                                                  
     <span class='response identifier id'>response</span> <span class='assign token'>=</span> <span class='HTTPI constant id'>HTTPI</span><span class='dot token'>.</span><span class='post identifier id'>post</span> <span class='@cdrs_request ivar id'>@cdrs_request</span>
+    <span class='Hashie constant id'>Hashie</span><span class='colon2 op'>::</span><span class='Mash constant id'>Mash</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:code</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='code identifier id'>code</span><span class='comma token'>,</span>
+                       <span class='symbol val'>:body</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='raw_body identifier id'>raw_body</span><span class='comma token'>,</span>
+                       <span class='symbol val'>:headers</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='headers identifier id'>headers</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='else else kw'>else</span>
-    <span class='@numbers_request ivar id'>@numbers_request</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span> <span class='Gyoku constant id'>Gyoku</span><span class='dot token'>.</span><span class='xml identifier id'>xml</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='method_name identifier id'>method_name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:developer_key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='@developer_key ivar id'>@developer_key</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span><span class='comma token'>,</span>
-                                        <span class='symbol val'>:attributes!</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='xml_namespaces identifier id'>xml_namespaces</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
-                                                                 
+    <span class='@numbers_request ivar id'>@numbers_request</span><span class='dot token'>.</span><span class='body identifier id'>body</span> <span class='assign token'>=</span> <span class='build_xml identifier id'>build_xml</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='rparen token'>)</span>                                  
     <span class='response identifier id'>response</span> <span class='assign token'>=</span> <span class='HTTPI constant id'>HTTPI</span><span class='dot token'>.</span><span class='post identifier id'>post</span> <span class='@numbers_request ivar id'>@numbers_request</span>
+    <span class='Hashie constant id'>Hashie</span><span class='colon2 op'>::</span><span class='Mash constant id'>Mash</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:code</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='code identifier id'>code</span><span class='comma token'>,</span>
+                       <span class='symbol val'>:body</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='Crack constant id'>Crack</span><span class='colon2 op'>::</span><span class='XML constant id'>XML</span><span class='dot token'>.</span><span class='parse identifier id'>parse</span><span class='lparen token'>(</span><span class='response identifier id'>response</span><span class='dot token'>.</span><span class='raw_body identifier id'>raw_body</span><span class='rparen token'>)</span><span class='comma token'>,</span>
+                       <span class='symbol val'>:headers</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='headers identifier id'>headers</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='end end kw'>end</span>
-  
-  <span class='Hashie constant id'>Hashie</span><span class='colon2 op'>::</span><span class='Mash constant id'>Mash</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:code</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='code identifier id'>code</span><span class='comma token'>,</span>
-                     <span class='symbol val'>:body</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='Crack constant id'>Crack</span><span class='colon2 op'>::</span><span class='XML constant id'>XML</span><span class='dot token'>.</span><span class='parse identifier id'>parse</span><span class='lparen token'>(</span><span class='response identifier id'>response</span><span class='dot token'>.</span><span class='raw_body identifier id'>raw_body</span><span class='rparen token'>)</span><span class='comma token'>,</span>
-                     <span class='symbol val'>:headers</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='response identifier id'>response</span><span class='dot token'>.</span><span class='headers identifier id'>headers</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -512,10 +533,150 @@ constant</p>
 </div>
 
 
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="build_xml-instance_method">
+  
+    - (<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>) <strong>build_xml</strong>(method_name, params) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Builds the XML document for the method call</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>required</tt>, <tt>Symbol</tt>)</span>
+      
+      
+        <span class='name'>the</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>method name to invoke on the REST API</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>optional</tt>, <tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>the</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>parameters to pass to the method, should be symbols and may be all
+lowercase with underscores or camelCase</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the resulting XML document</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/bandwidth/bandwidth.rb', line 85</span>
+
+<span class='def def kw'>def</span> <span class='build_xml identifier id'>build_xml</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='comma token'>,</span> <span class='params identifier id'>params</span><span class='rparen token'>)</span>
+  <span class='builder_params identifier id'>builder_params</span> <span class='assign token'>=</span> <span class='params identifier id'>params</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='lbrace token'>{</span> <span class='symbol val'>:developer_key</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='@developer_key ivar id'>@developer_key</span> <span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  
+  <span class='builder identifier id'>builder</span> <span class='assign token'>=</span> <span class='Nokogiri constant id'>Nokogiri</span><span class='colon2 op'>::</span><span class='XML constant id'>XML</span><span class='colon2 op'>::</span><span class='Builder constant id'>Builder</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='xml identifier id'>xml</span><span class='bitor op'>|</span>
+    <span class='xml identifier id'>xml</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='method_name identifier id'>method_name</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='camelize identifier id'>camelize</span><span class='dot token'>.</span><span class='uncapitalize identifier id'>uncapitalize</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='comma token'>,</span> <span class='xml_namespaces identifier id'>xml_namespaces</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+      <span class='builder_params identifier id'>builder_params</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='parent_k identifier id'>parent_k</span><span class='comma token'>,</span> <span class='parent_v identifier id'>parent_v</span><span class='bitor op'>|</span>
+        <span class='if if kw'>if</span> <span class='parent_v identifier id'>parent_v</span><span class='dot token'>.</span><span class='instance_of? fid id'>instance_of?</span><span class='lparen token'>(</span><span class='Array constant id'>Array</span><span class='rparen token'>)</span>
+          <span class='xml identifier id'>xml</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='parent_k identifier id'>parent_k</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='camelize identifier id'>camelize</span><span class='dot token'>.</span><span class='uncapitalize identifier id'>uncapitalize</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+            <span class='parent_v identifier id'>parent_v</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='item identifier id'>item</span><span class='bitor op'>|</span>
+              <span class='item identifier id'>item</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='item_k identifier id'>item_k</span><span class='comma token'>,</span> <span class='item_v identifier id'>item_v</span><span class='bitor op'>|</span>
+                <span class='symbol identifier id'>symbol</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='item_k identifier id'>item_k</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='plus op'>+</span> <span class='string val'>'_'</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
+                <span class='xml identifier id'>xml</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='symbol identifier id'>symbol</span><span class='comma token'>,</span> <span class='item_v identifier id'>item_v</span><span class='rparen token'>)</span>
+              <span class='end end kw'>end</span>
+            <span class='end end kw'>end</span>
+          <span class='end end kw'>end</span>
+        <span class='else else kw'>else</span>
+          <span class='xml identifier id'>xml</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='parent_k identifier id'>parent_k</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='camelize identifier id'>camelize</span><span class='dot token'>.</span><span class='uncapitalize identifier id'>uncapitalize</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='comma token'>,</span> <span class='parent_v identifier id'>parent_v</span><span class='rparen token'>)</span>
+        <span class='end end kw'>end</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='builder identifier id'>builder</span><span class='dot token'>.</span><span class='to_xml identifier id'>to_xml</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 </div>
     
     <div id="footer">
-  Generated on Fri Mar 18 12:54:33 2011 by 
+  Generated on Mon Mar 21 16:25:21 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.4 (ruby-1.8.7).
 </div>
