@@ -57,7 +57,7 @@ describe "Bandwidth" do
     it "should get a resopnse when retrieving cdrs" do
       #pending('It appears Bandwidth has not provided access to this just yet.')
       result = @bandwidth.get_cdr_archive(:get_type => 'Daily', :get_value => '20110221')
-      result['Content-Type'].should == nil
+      result['headers']['Content-Type'].should == 'application/zip'
     end
   end
 end
