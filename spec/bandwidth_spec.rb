@@ -2,8 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "Bandwidth" do
   before(:each) do
-    # You will need to set the developer_key to a valid one from Bandwidth in order to run a test
-    @bandwidth = Bandwidth.new({ :developer_key => 'your developer key',
+    # You will need to set the environment variable BANDWIDTH_DEVELPOR_KEY to a valid one from Bandwidth in order to run a test
+    @bandwidth = Bandwidth.new({ :developer_key => ENV['BANDWIDTH_DEVELOPER_KEY'],
                                  :use_lab_uris  => true,
                                  :log_level     => :debug })
   end
@@ -55,9 +55,9 @@ describe "Bandwidth" do
   
   describe "cdrs" do
     it "should get a resopnse when retrieving cdrs" do
-      pending('It appears Bandwidth has not provided access to this just yet.')
+      #pending('It appears Bandwidth has not provided access to this just yet.')
       result = @bandwidth.get_cdr_archive(:get_type => 'Daily', :get_value => '20110221')
-      result.should == nil
+      result['Content-Type'].should == nil
     end
   end
 end

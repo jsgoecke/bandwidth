@@ -65,16 +65,18 @@ class Bandwidth
                                           :attributes! => xml_namespaces(method_name) })
                                                                    
       response = HTTPI.post @cdrs_request
+      Hashie::Mash.new({ :code    => response.code,
+                         :body    => response.raw_body,
+                         :headers => response.headers })
     else
       @numbers_request.body = Gyoku.xml({ method_name => params.merge({ :developer_key => @developer_key }),
                                           :attributes! => xml_namespaces(method_name) })
                                                                    
       response = HTTPI.post @numbers_request
+      Hashie::Mash.new({ :code    => response.code,
+                         :body    => Crack::XML.parse(response.raw_body),
+                         :headers => response.headers })
     end
-    
-    Hashie::Mash.new({ :code    => response.code,
-                       :body    => Crack::XML.parse(response.raw_body),
-                       :headers => response.headers })
   end
   
   private
@@ -105,9 +107,9 @@ class Bandwidth
       end
     elsif type == :cdrs
       if @use_labs_uris == true
-        request.url = 'http://labs.bandwidth.com/api/public/v2/cdrs.api'
+        request.url = 'http://labs.bandwidth.com/api/public/v2/cdr.api'
       else
-        request.url = 'https://api.bandwidth.com/public/v2/cdrs.api'
+        request.url = 'https://api.bandwidth.com/api/public/v2/cdrs.api'
       end
     end
     
